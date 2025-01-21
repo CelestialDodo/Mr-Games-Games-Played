@@ -59,32 +59,38 @@
   <button class="fixed-button" onclick="window.location.href='https://celestialdodo.github.io/Mr-Games-Games-Played';">Back</button>
 
 <!-- Button to toggle collapsible content -->
-<button class="collapsible" style="margin-top: 20px">Leek Factory</button>
+<button class="collapsible" style="margin-top: 40px">Leek Factory</button>
 <button class="collapsible" style="margin-top: 20px">Leek Factory</button>
 <button class="collapsible" style="margin-top: 20px">Leek Factory</button>
 <button class="collapsible" style="margin-top: 20px">Leek Factory</button>
 
 <!-- The collapsible content -->
-<div class="content">
-    <iframe src="https://www.crazygames.com/embed/leek-factory-tycoon" style="width: 100%; height: 100%;" frameborder="0" allow="gamepad *;"></iframe>
+<div class="content" id="Leek Factory">
+    <iframe src="https://www.crazygames.com/embed/leek-factory-tycoon" frameborder="0" allow="gamepad *;"></iframe>
 </div>
 
   <script>
         // Get the button and the collapsible content
-        const collapsible = document.querySelector(".collapsible");
-        const content = document.querySelector(".content");
+        const collapsableButtons = document.querySelectorAll('.collapsable');
 
-        // Add click event listener to toggle content visibility
-        collapsible.addEventListener("click", function() {
-            // Toggle the 'show' class on the content to show/hide it
-            content.classList.toggle("show");
-            
-            // Optionally, change button text based on state
-            if (content.classList.contains("show")) {
-                collapsible.textContent = "Close";
-            } else {
-                collapsible.textContent = "Leek Factory";
-            }
+        collapsableButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Get the text of the clicked button
+                const sectionId = this.textContent.trim(); // Use .textContent to get button's text
+                
+                // Find the corresponding collapsible menu by the text of the button (matching ID)
+                const collapsibleMenu = document.getElementById(sectionId);
+                
+                // Toggle the visibility of the collapsible menu
+                if (collapsibleMenu) {
+                    // If it's currently shown, hide it; otherwise, show it
+                    if (collapsibleMenu.style.display === "block") {
+                        collapsibleMenu.style.display = "none";
+                    } else {
+                        collapsibleMenu.style.display = "block";
+                    }
+                }
+            });
         });
     </script>
 </body>
