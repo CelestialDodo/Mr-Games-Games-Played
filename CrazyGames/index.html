@@ -2,11 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Mr Games - Main</title>
+  <title>Mr Games - Crazy Games</title>
+    <style>
+        /* Style for the button */
+        .collapsible {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+        }
+
+        /* Style for the collapsible content */
+        .content {
+            padding: 0 18px;
+            display: none;  /* Initially hidden */
+            overflow: hidden;
+            background-color: #f1f1f1;
+        }
+
+        /* Optional: style for the collapsible content when expanded */
+        .content.show {
+            display: block;
+        }
+    </style>
 </head>
 <body>
   <button onclick="href='/CrazyGames';">Games we've played on "Crazy Games"</button>
+
+<!-- Button to toggle collapsible content -->
+<button class="collapsible">Click to Toggle Content</button>
+
+<!-- The collapsible content -->
+<div class="content">
+    <p>This is some collapsible content. You can hide or show it using the button above.</p>
+    <p>Feel free to add more content here!</p>
+</div>
+
   <script>
-  </script>
+        // Get the button and the collapsible content
+        const collapsible = document.querySelector(".collapsible");
+        const content = document.querySelector(".content");
+
+        // Add click event listener to toggle content visibility
+        collapsible.addEventListener("click", function() {
+            // Toggle the 'show' class on the content to show/hide it
+            content.classList.toggle("show");
+            
+            // Optionally, change button text based on state
+            if (content.classList.contains("show")) {
+                collapsible.textContent = "Click to Hide Content";
+            } else {
+                collapsible.textContent = "Click to Show Content";
+            }
+        });
+    </script>
 </body>
 </html>
