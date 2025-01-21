@@ -6,7 +6,7 @@
     <style>
         /* Style for the button */
         .collapsible {
-            background-color: #4CAF50;
+            background-color: #A1A1A1;
             color: white;
             cursor: pointer;
             padding: 10px;
@@ -28,10 +28,34 @@
         .content.show {
             display: block;
         }
+      
+        .fixed-button {
+              position: fixed; /* Fix the button on the screen */
+              top: 20px; /* Distance from the top */
+              left: 20px; /* Distance from the left */
+              padding: 20px 40px; /* Increase the size of the button */
+              font-size: 20px; /* Larger font */
+              background-color: #4CAF50; /* Green background */
+              color: white;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              z-index: 1000; /* Ensure it's on top of other content */
+          }
+  
+          /* Optional: Hover effect for the button */
+          .fixed-button:hover {
+              background-color: #45a049;
+          }
+
+          body {
+            background-color: #A9A9A9
+          }
     </style>
 </head>
 <body>
-  <button onclick="href='/CrazyGames';">Games we've played on "Crazy Games"</button>
+  <button class="fixed-button">Fixed Button</button>
+  <button class="fixed-button" onclick="window.location.href='https://celestialdodo.github.io/Mr-Games-Games-Played';">Games we've played on "Crazy Games"</button>
 
 <!-- Button to toggle collapsible content -->
 <button class="collapsible">Click to Toggle Content</button>
